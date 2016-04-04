@@ -24,7 +24,7 @@ function getDatabase() {
   } else {
     db_config['connection'] = {
       host: process.env['DB_HOST'] || 'localhost',
-      port: process.env['DB_PORT'] || '3305'
+      port: process.env['DB_PORT'] || '3306'
     };
   }
   if (process.env['DB_USER']) db_config['connection']['user'] = process.env['DB_USER'];
@@ -49,20 +49,22 @@ if (!process.env.URL) {
 config = {
   production: {
     url: process.env.URL,
+    urlSSL: process.env['SECUREURL'] || ''
     database: getDatabase(),
     mail: getMailConfig(),
     server: {
       host: '0.0.0.0',
-      port: '2368'
+      port: process.env['NODE_PORT'] || '2368'
     }
   },
   development: {
     url: process.env.URL,
+    urlSSL: process.env['SECUREURL'] || ''
     database: getDatabase(),
     mail: getMailConfig(),
     server: {
       host: '0.0.0.0',
-      port: '2368'
+      port: process.env['NODE_PORT'] || '2368'
     }
   },
 };
