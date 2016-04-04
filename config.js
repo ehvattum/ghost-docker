@@ -1,3 +1,4 @@
+
 var config,
     url = require('url'),
     path = require('path');
@@ -49,7 +50,7 @@ if (!process.env.URL) {
 config = {
   production: {
     url: process.env.URL,
-    urlSSL: process.env['SECUREURL'] || ''
+    urlSSL: process.env['SECUREURL'] || '',
     database: getDatabase(),
     mail: getMailConfig(),
     server: {
@@ -59,7 +60,7 @@ config = {
   },
   development: {
     url: process.env.URL,
-    urlSSL: process.env['SECUREURL'] || ''
+    urlSSL: process.env['SECUREURL'] || '',
     database: getDatabase(),
     mail: getMailConfig(),
     server: {
