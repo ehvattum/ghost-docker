@@ -1,4 +1,3 @@
-
 var config,
     url = require('url'),
     path = require('path');
