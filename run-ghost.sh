@@ -9,5 +9,4 @@ _theme_source_destination="${HOME}/content/themes/default"
 #    git clone ${THEME_SOURCE} $HOME/content/themes/default
 #fi
 
-chown -R ghost /var/www/ghost
-su ghost -c "npm start"
+npm start

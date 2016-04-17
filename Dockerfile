@@ -21,7 +21,6 @@ WORKDIR /var/www/ghost
 # Add config and script to start the engine
 ADD config.js /var/www/ghost/config.js
 ADD run-ghost.sh /run-ghost.sh
-
-RUN chmod 755 /run-ghost.sh
-
+RUN chown ghost /run-ghost.sh
+USER ghost
 CMD /run-ghost.sh
