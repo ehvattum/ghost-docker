@@ -4,3 +4,5 @@ ghost:
     - NODE_ENV=production
     - NODE_PORT=8080
     - 'URL=http://ragesheep.com'
+  ports:
+    - 8080:8080
