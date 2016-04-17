@@ -3,7 +3,4 @@ ghost:
   environment:
     - NODE_ENV=production
     - NODE_PORT=8080
-    - 'THEME_SOURCE=https://github.com/ehvattum/The-Shell'
     - 'URL=http://ragesheep.com'
-  expose:
-    - '8080'
