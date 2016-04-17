@@ -20,6 +20,7 @@ RUN set -x \
 	&& gosu nobody true
 
 ENV GHOST_SOURCE /usr/src/ghost
+COPY config.js "$GHOST_SOURCE"/config.js
 WORKDIR $GHOST_SOURCE
 
 ENV GHOST_VERSION 0.7.8
@@ -42,11 +43,10 @@ RUN buildDeps=' \
 
 ENV GHOST_CONTENT /var/lib/ghost
 RUN mkdir -p "$GHOST_CONTENT"
-COPY config.js "$GHOST_CONTENT"/config.js
 COPY themes/ "$GHOST_CONTENT"/themes/
 RUN chown -R user:user "$GHOST_CONTENT"
-VOLUME $GHOST_CONTENT
 
+VOLUME $GHOST_CONTENT
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 

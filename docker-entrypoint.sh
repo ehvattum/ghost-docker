@@ -11,8 +11,6 @@ if [[ "$*" == npm*start* ]]; then
 		fi
 	done
 
-	ln -sf "$GHOST_CONTENT/config.js" "$GHOST_SOURCE/config.js"
-
 	chown -R user "$GHOST_CONTENT"
 
 	set -- gosu user "$@"
