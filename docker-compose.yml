@@ -1,8 +1,8 @@
-ghost:
+standalone:
   build: .
   environment:
-    - NODE_ENV=production
+    - NODE_ENV=development
     - NODE_PORT=8080
-    - 'URL=http://ragesheep.com'
+    - 'URL=http://local.docker.no'
   ports:
     - 8080:8080

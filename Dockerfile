@@ -43,6 +43,7 @@ RUN buildDeps=' \
 ENV GHOST_CONTENT /var/lib/ghost
 RUN mkdir -p "$GHOST_CONTENT"
 COPY config.js "$GHOST_CONTENT"/config.js
+COPY themes/ "$GHOST_CONTENT"/themes/
 RUN chown -R user:user "$GHOST_CONTENT"
 VOLUME $GHOST_CONTENT
 
