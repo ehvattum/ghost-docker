@@ -47,6 +47,7 @@ VOLUME $GHOST_CONTENT
 COPY config.js "$GHOST_CONTENT"/config.js
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+ENTRYPOINT ['/entrypoint.sh']
 
 EXPOSE 8080
-CMD ['/bin/bash', '/entrypoint.sh', 'npm', 'start']
+CMD ['npm', 'start']
