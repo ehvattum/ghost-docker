@@ -10,7 +10,7 @@ function getDatabase() {
     return {
       client: 'sqlite3',
       connection: {
-	filename: path.join(__dirname, '/content/data/ghost.db')
+        	filename: process.env.GHOST_CONTENT+"/data/ghost.db"
       },
       debug: false
     };
@@ -41,7 +41,7 @@ function getMailConfig() {
   if (process.env.MAIL_PASS) { mail_config['auth']['pass'] = process.env.MAIL_PASS }
   return mail_config;
 }
-if (!process.env.URL) {
+if (!process.env['URL']) {
   console.log("Please set URL environment variable to your blog's URL");
   process.exit(1);
 }
@@ -55,7 +55,10 @@ config = {
     server: {
       host: '0.0.0.0',
       port: process.env['NODE_PORT'] || '2368'
-    }
+    },
+    paths: {
+            contentPath: process.env.GHOST_CONTENT+"/"
+        }
   },
   development: {
     url: process.env.URL,
@@ -65,7 +68,10 @@ config = {
     server: {
       host: '0.0.0.0',
       port: process.env['NODE_PORT'] || '2368'
-    }
+    },
+    paths: {
+            contentPath: process.env.GHOST_CONTENT+"/"
+        }
   },
 };
 module.exports = config;
