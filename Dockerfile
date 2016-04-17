@@ -22,6 +22,6 @@ WORKDIR /var/www/ghost
 ADD config.js /var/www/ghost/config.js
 ADD run-ghost.sh /run-ghost.sh
 
-RUN chmod 0500 /run-ghost.sh
+RUN chmod 755 /run-ghost.sh
 
 CMD /run-ghost.sh
